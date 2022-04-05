@@ -1,4 +1,4 @@
-# nerve
+# nerval
 Entity-level confusion matrix and classification report to evaluate Named Entity Recognition (NER) models.
 
 
@@ -29,7 +29,7 @@ Entity-level confusion matrix and classification report to evaluate Named Entity
 ## How to use it:
 
 ```python
->>> from nerve import crm
+>>> from nerval import crm
 
 >>> y_true = [['O', 'B-PER', 'I-PER', 'O', 'O', 'O', 'O', 'B-LOC', 'I-LOC']]
 >>> y_pred = [['O', 'B-PER', 'O', 'O', 'O', 'O', 'O', 'O', 'B-LOC']]
@@ -67,7 +67,7 @@ weighted_avg       0.00    0.00      0.00           2.00           2.00
 ```
 
 ```python
->>> from nerve import plot_confusion_matrix
+>>> from nerval import plot_confusion_matrix
 
 >>> y_true = [['O', 'B-PER', 'I-PER', 'O', 'O', 'O', 'O', 'B-LOC', 'I-LOC']]
 >>> y_pred = [['O', 'B-PER', 'O', 'O', 'O', 'O', 'O', 'O', 'B-LOC']]
@@ -117,20 +117,20 @@ In case of division by zero, the result will default to zero.
 
 ## Installation
 ```bash
-pip install nerve
+pip install nerval
 ```
 
 
 ## License
-[MIT](https://github.com/mdadda/nerve/blob/main/LICENCE.txt)
+[MIT](https://github.com/mdadda/nerval/blob/main/LICENCE.txt)
 
 
 ## Citation
 ```text
-@misc{nerve,
-  title={{nerve}: Entity-level confusion matrix and classification report to evaluate Named Entity Recognition (NER) models.},
-  url={https://github.com/mdadda/nerve},
-  note={Software available from https://github.com/mdadda/nerve},
+@misc{nerval,
+  title={{nerval}: Entity-level confusion matrix and classification report to evaluate Named Entity Recognition (NER) models.},
+  url={https://github.com/mdadda/nerval},
+  note={Software available from https://github.com/mdadda/nerval},
   author={Mariangela D'Addato},
   year={2022},
 }
