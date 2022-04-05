@@ -1,6 +1,5 @@
 # nerve
-nerve is a Python framework to evaluate Named Entity Recognition (NER) models.
-It generates entity-level confusion matrix and classification report.
+Entity-level confusion matrix and classification report to evaluate Named Entity Recognition (NER) models.
 
 
 ## Labelling schemes supported:
@@ -123,13 +122,13 @@ pip install nerve
 
 
 ## License
-MIT
+[MIT](https://github.com/mdadda/nerve/blob/main/LICENCE.txt)
 
 
 ## Citation
 ```text
 @misc{nerve,
-  title={{nerve}: A Python framework to evaluate Named Entity Recognition (NER) models. Entity-level confusion matrix and classification report.},
+  title={{nerve}: Entity-level confusion matrix and classification report to evaluate Named Entity Recognition (NER) models.},
   url={https://github.com/mdadda/nerve},
   note={Software available from https://github.com/mdadda/nerve},
   author={Mariangela D'Addato},
