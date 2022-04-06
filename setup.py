@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="nerval",
-    version="1.0.4",
+    version="1.0.5",
     author="Mariangela D'Addato",
     author_email="mdadda.py@gmail.com",
     description="Entity-level confusion matrix and classification report to evaluate Named Entity Recognition (NER) models.",
