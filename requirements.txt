@@ -1,4 +1,4 @@
 pandas
 numpy
-matplotlib.pyplot
-sklearn.metrics
+matplotlib
+scikit-learn
