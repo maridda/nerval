@@ -88,16 +88,16 @@ Flat lists and lists of nested lists will be converted to lists of lists.
 The __ at the end of some entities means that true and pred have the same entity name for the first token but the prediction is somewhat different from the true label.
 Examples:
 ```python
->>> y_true = ['B-ORG', 'I-ORG', 'I-ORG'])
+>>> y_true = ['B-ORG', 'I-ORG', 'I-ORG']
 >>> y_pred = ['B-ORG']
 
->>> y_true = ['B-ORG', 'I-ORG', 'I-ORG'])
+>>> y_true = ['B-ORG', 'I-ORG', 'I-ORG']
 >>> y_pred = ['B-ORG', 'I-ORG', 'I-ORG', 'I-ORG', 'I-ORG']
 
->>> y_true = ['B-ORG', 'I-ORG', 'I-ORG'])
+>>> y_true = ['B-ORG', 'I-ORG', 'I-ORG']
 >>> y_pred = ['B-ORG', 'I-PER']
 
->>> y_true = ['B-ORG', 'I-ORG', 'I-ORG'])
+>>> y_true = ['B-ORG', 'I-ORG', 'I-ORG']
 >>> y_pred = ['I-ORG', 'I-PER']
 ```
 
