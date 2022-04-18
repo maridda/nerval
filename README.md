@@ -118,6 +118,7 @@ In case of division by zero, the result will default to zero.
 ## Installation
 ```bash
 pip install nerval
+conda install -c conda-forge nerval
 ```
 
 
