@@ -72,7 +72,12 @@ weighted_avg       0.00    0.00      0.00           2.00           2.00
 >>> y_true = [['O', 'B-PER', 'I-PER', 'O', 'O', 'O', 'O', 'B-LOC', 'I-LOC']]
 >>> y_pred = [['O', 'B-PER', 'O', 'O', 'O', 'O', 'O', 'O', 'B-LOC']]
 
->>> plot_confusion_matrix(cm, cm_labels, normalize=None, decimal_places=2, figsize=(15,15), SMALL_SIZE=8, MEDIUM_SIZE=12, BIGGER_SIZE=14, cmap='OrRd', xticks_rotation='vertical', title='Confusion Matrix')
+>>> plot_confusion_matrix(cm, cm_labels, >>> from nerval import plot_confusion_matrix
+
+>>> y_true = [['O', 'B-PER', 'I-PER', 'O', 'O', 'O', 'O', 'B-LOC', 'I-LOC']]
+>>> y_pred = [['O', 'B-PER', 'O', 'O', 'O', 'O', 'O', 'O', 'B-LOC']]
+
+>>> plot_confusion_matrix(cm, cm_labels, show=True, save=False, img_path=None, normalize=None, decimal_places=2, figsize=(15,15), SMALL_SIZE=8, MEDIUM_SIZE=12, BIGGER_SIZE=14, cmap='OrRd', xticks_rotation='vertical', title='Confusion Matrix')
 ```
 
 ### Note 1:
@@ -113,6 +118,12 @@ Default is None.
 
 ### Note 4:
 In case of division by zero, the result will default to zero.
+
+### Note 5:
+Parameters in function plot_confusion_matrix():
+show: show the plot (default: True)
+save: save the plot (default: False) 
+img_path: where to save the plot - e.g. r'C:\Users\User\...\my_conf_matrix.png' (default: None - this means save the plot in current dir)
 
 
 ## Installation
