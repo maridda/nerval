@@ -15,8 +15,19 @@
 #     - I- : inside
 #     - O- : outside
 #
-#     - 2a. BIO1 (or IOB1): the B- tag is only used when a token is the beginning of a chunk immediately following another chunk of the same Named Entity.
+#     - 2a. BIO1 (or IOB1): the B- tag is only used when a token is the beginning of a chunk immediately following another chunk of the same Named Entity
+#           Lucy: I-PER
+#           going: O
+#           San: I-LOC
+#           Francisco: I-LOC
+#           California: B-LOC
+#
 #     - 2b. BIO2 (or IOB2): the B- tag is used for each starting token.
+#           Lucy: B-PER
+#           going: O
+#           San: B-LOC
+#           Francisco: I-LOC
+#           California: B-LOC
 #
 # 3. IOE:
 #     - I- : inside
@@ -51,12 +62,13 @@
 #     Chunks of length >= 2 always start with the B tag and end with the L tag.
 
 
-import sys
-import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+import pandas as pd
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import ConfusionMatrixDisplay
+import sys
 
 
 
@@ -92,7 +104,7 @@ def crm(y_true, y_pred, scheme='BIO'):
     y_true_clean, y_pred_clean = get_clean_entities(y_true, y_pred, scheme=scheme)       # function
 
     cr = create_classification_report(y_true_clean, y_pred_clean)                        # function
-    cm, cm_labels = create_confusion_matrix(y_true_clean, y_pred_clean)                # function
+    cm, cm_labels = create_confusion_matrix(y_true_clean, y_pred_clean)                  # function
 
     return cr, cm, cm_labels
 
@@ -159,7 +171,7 @@ def create_classification_report(list_true, list_pred):
         # PRECISION - RECALL - F1_SCORE
         df['precision'] = (df['tp'] / df['pred_entities'])
         df['recall'] = (df['tp'] / df['true_entities'])
-        df['f1_score'] = ((2 * df['precision'] * df['recall']) /(df['precision'] + df['recall']))
+        df['f1_score'] = ((2 * df['precision'] * df['recall']) / (df['precision'] + df['recall']))
 
         # Replace NaN values with 0
         df = df.replace(np.nan, 0)
@@ -207,8 +219,8 @@ def create_classification_report(list_true, list_pred):
 
 # 1c. Create a pandas dataframe with the counts by entity of the following:
 # 1. tp : true positives, i.e. true=pred
-# 2. fn : false negatives, i.e. pred=O
-# 3. fpo : false positives where true=O
+# 2. fn : false negatives, i.e. true!=O pred=O
+# 3. fpo : false positives where true=O pred!=O
 # 4. fpd_true : false positives where true<>pred and the entity in question is the true entity
 # 5. fpd_pred : false positives where true<>pred and the entity in question is the pred entity
 # 6. tot_fp : total false positives, i.e. fpo + fpd_true + fpd_pred
@@ -648,7 +660,7 @@ def count_entities(tuples_lst):
 #                 'ocean','pink','plasma','prism','rainbow','seismic','spring','summer','tab10','tab20','tab20b',
 #                 'tab20c','terrain','turbo','twilight','twilight_shifted','viridis','winter']
 
-def plot_confusion_matrix(cm, cm_labels, normalize=None,
+def plot_confusion_matrix(cm, cm_labels, show=True, save=False, img_path=None, normalize=None,
                           figsize=(35,35), SMALL_SIZE=14, MEDIUM_SIZE=16, BIGGER_SIZE=20, decimal_places=2,
                           cmap='OrRd', xticks_rotation='vertical',title=''):
 
@@ -658,7 +670,7 @@ def plot_confusion_matrix(cm, cm_labels, normalize=None,
     else:
 
         # Normalise confusion matrix
-        cm = normalize_confusion_matrix(cm, normalize=normalize)                                   # function
+        cm = nerval.normalize_confusion_matrix(cm, normalize=normalize)                                   # function
 
         # Round confusion_matrix values to n decimal places
         cm = np.around(cm, decimal_places)
@@ -679,11 +691,24 @@ def plot_confusion_matrix(cm, cm_labels, normalize=None,
         plt.rc('legend', fontsize=MEDIUM_SIZE)      # legend font size
         plt.rc('figure', titlesize=BIGGER_SIZE)     # font size of the figure title
 
-        # Display the plot
+        # Create the plot
         cm_display = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=cm_labels)           # sklearn function
         cm_display.plot(include_values=True, cmap=cmap, ax=ax, xticks_rotation=xticks_rotation)
         plt.title(title)
-        plt.show()
+
+        # Save the plot in current dir
+        if save == True and img_path == None:
+            plt.savefig("confusion_matrix.jpg")
+
+        # Save the plot in dir chosen by user
+        if save == True and img_path != None:
+            plt.savefig(img_path)
+
+        # Show the plot
+        if show == True:
+            plt.show()
+        else:
+            plt.close()
 
 
 
