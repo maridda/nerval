@@ -72,11 +72,6 @@ weighted_avg       0.00    0.00      0.00           2.00           2.00
 >>> y_true = [['O', 'B-PER', 'I-PER', 'O', 'O', 'O', 'O', 'B-LOC', 'I-LOC']]
 >>> y_pred = [['O', 'B-PER', 'O', 'O', 'O', 'O', 'O', 'O', 'B-LOC']]
 
->>> plot_confusion_matrix(cm, cm_labels, >>> from nerval import plot_confusion_matrix
-
->>> y_true = [['O', 'B-PER', 'I-PER', 'O', 'O', 'O', 'O', 'B-LOC', 'I-LOC']]
->>> y_pred = [['O', 'B-PER', 'O', 'O', 'O', 'O', 'O', 'O', 'B-LOC']]
-
 >>> plot_confusion_matrix(cm, cm_labels, show=True, save=False, img_path=None, normalize=None, decimal_places=2, figsize=(15,15), SMALL_SIZE=8, MEDIUM_SIZE=12, BIGGER_SIZE=14, cmap='OrRd', xticks_rotation='vertical', title='Confusion Matrix')
 ```
 
