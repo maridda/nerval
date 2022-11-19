@@ -121,9 +121,9 @@ In case of division by zero, the result will default to zero.
 
 ### Note 5:
 Parameters in function plot_confusion_matrix():
-show: show the plot (default: True)
-save: save the plot (default: False) 
-img_path: where to save the plot - e.g. r'C:\Users\User\...\my_conf_matrix.png' (default: None - this means save the plot in current dir)
+- show: show the plot (default: True)
+- save: save the plot (default: False) 
+- img_path: where to save the plot - e.g. r'C:\Users\User\...\my_conf_matrix.png' (default: None - this means save the plot in current dir)
 
 
 ## Installation
