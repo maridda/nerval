@@ -73,6 +73,14 @@ weighted_avg       0.00    0.00      0.00           2.00           2.00
 >>> y_pred = [['O', 'B-PER', 'O', 'O', 'O', 'O', 'O', 'O', 'B-LOC']]
 
 >>> plot_confusion_matrix(cm, cm_labels, show=True, save=False, img_path=None, normalize=None, decimal_places=2, figsize=(15,15), SMALL_SIZE=8, MEDIUM_SIZE=12, BIGGER_SIZE=14, cmap='OrRd', xticks_rotation='vertical', title='Confusion Matrix')
+
+>>> plot_confusion_matrix(cm, cm_labels, show=True, save=True, img_path=None)
+
+>>> plot_confusion_matrix(cm, cm_labels, show=True, save=True, img_path=r'C:\Users\...\my_conf_matrix.png')
+
+>>> plot_confusion_matrix(cm, cm_labels, show=False, save=True, img_path=None)
+
+>>> plot_confusion_matrix(cm, cm_labels, show=False, save=True, img_path=r'C:\Users\...\my_conf_matrix.png')
 ```
 
 ### Note 1:
