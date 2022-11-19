@@ -670,7 +670,7 @@ def plot_confusion_matrix(cm, cm_labels, show=True, save=False, img_path=None, n
     else:
 
         # Normalise confusion matrix
-        cm = nerval.normalize_confusion_matrix(cm, normalize=normalize)                                   # function
+        cm = normalize_confusion_matrix(cm, normalize=normalize)                                   # function
 
         # Round confusion_matrix values to n decimal places
         cm = np.around(cm, decimal_places)
