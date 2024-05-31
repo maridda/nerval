@@ -150,3 +150,7 @@ conda install -c conda-forge nerval
   year={2022},
 }
 ```
+<<<<<<< HEAD
+=======
+
+>>>>>>> bcf33ea (added git to nerval package on local machine)

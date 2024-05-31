@@ -191,9 +191,15 @@ def create_classification_report(list_true, list_pred):
         micro_avg_f1 = ((2 * micro_avg_precision * micro_avg_recall) / (micro_avg_precision + micro_avg_recall)) if (micro_avg_precision + micro_avg_recall)!=0 else 0
 
         # Calculate macro averages
+<<<<<<< HEAD
         macro_avg_precision = totals['precision'] / len(df) if len(df)!=0 else 0
         macro_avg_recall = totals['recall'] / len(df) if len(df)!=0 else 0
         macro_avg_f1 = totals['f1_score'] / len(df) if len(df)!=0 else 0
+=======
+        macro_avg_precision = totals['precision'] / len(df) if df else 0
+        macro_avg_recall = totals['recall'] / len(df) if df else 0
+        macro_avg_f1 = totals['f1_score'] / len(df) if df else 0
+>>>>>>> bcf33ea (added git to nerval package on local machine)
 
         # Calculate weighted averages
         weighted_avg_precision = sum((df['precision'] * df['true_entities'])) / totals['true_entities'] if totals['true_entities']!=0 else 0
@@ -664,7 +670,11 @@ def plot_confusion_matrix(cm, cm_labels, show=True, save=False, img_path=None, n
                           figsize=(35,35), SMALL_SIZE=14, MEDIUM_SIZE=16, BIGGER_SIZE=20, decimal_places=2,
                           cmap='OrRd', xticks_rotation='vertical',title=''):
 
+<<<<<<< HEAD
     if len(cm) == 0:
+=======
+    if not cm:
+>>>>>>> bcf33ea (added git to nerval package on local machine)
         print('Confusion matrix is empty')
 
     else:
@@ -697,11 +707,19 @@ def plot_confusion_matrix(cm, cm_labels, show=True, save=False, img_path=None, n
         plt.title(title)
 
         # Save the plot in current dir
+<<<<<<< HEAD
         if save == True and img_path == None:
             plt.savefig("confusion_matrix.jpg")
 
         # Save the plot in dir chosen by user
         if save == True and img_path != None:
+=======
+        if save == True and img_path is None:
+            plt.savefig("confusion_matrix.jpg")
+
+        # Save the plot in dir chosen by user
+        if save == True and img_path is not None:
+>>>>>>> bcf33ea (added git to nerval package on local machine)
             plt.savefig(img_path)
 
         # Show the plot
@@ -724,7 +742,11 @@ def normalize_confusion_matrix(cm, normalize=None):                             
     # To avoid error message when dividing by zero or dividing by NaN
     with np.errstate(all='ignore'):
 
+<<<<<<< HEAD
         if normalize == None:
+=======
+        if normalize is None:
+>>>>>>> bcf33ea (added git to nerval package on local machine)
             cm = cm
 
         elif normalize == 'true':
