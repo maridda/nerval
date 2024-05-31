@@ -11,7 +11,6 @@ print(cr)
 print(cm_labels)
 print(cm)
 
-
 # Plot Not Normalised Confusion Matrix
 # normalise: None, 'true', 'pred', 'all'. Default is None.
 plot_confusion_matrix(cm,
@@ -25,7 +24,6 @@ plot_confusion_matrix(cm,
                       cmap='OrRd',
                       xticks_rotation='vertical',
                       title='Confusion Matrix')
-
 
 # Plot Normalised Confusion Matrix where normalise = 'true'
 # In an unnormalised confusion matrix, the sum of each row represents the total actual value for each class label (ORG, PER, LOC,...).
@@ -42,7 +40,6 @@ plot_confusion_matrix(cm,
                       cmap='OrRd',
                       xticks_rotation='vertical',
                       title='Confusion Matrix: normalize=true')
-
 
 # Plot Normalised Confusion Matrix where normalise = 'pred'
 # In an unnormalised confusion matrix, the sum of each column represents the total predicted value for each class label (ORG, PER, LOC,...).
