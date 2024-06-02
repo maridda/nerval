@@ -137,14 +137,14 @@ conda install -c conda-forge nerval
 
 
 ## License
-[MIT](https://github.com/mdadda/nerval/blob/main/LICENCE.txt)
+[MIT](https://github.com/maridda/nerval/blob/main/LICENCE.txt)
 
 
 ## Citation
 ```text
 @misc{nerval,
   title={{nerval}: Entity-level confusion matrix and classification report to evaluate Named Entity Recognition (NER) models.},
-  url={https://github.com/mdadda/nerval},
+  url={https://github.com/maridda/nerval},
   note={Software available from https://github.com/maridda/nerval},
   author={Mariangela D'Addato},
   year={2022},
