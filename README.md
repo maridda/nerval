@@ -145,7 +145,7 @@ conda install -c conda-forge nerval
 @misc{nerval,
   title={{nerval}: Entity-level confusion matrix and classification report to evaluate Named Entity Recognition (NER) models.},
   url={https://github.com/mdadda/nerval},
-  note={Software available from https://github.com/mdadda/nerval},
+  note={Software available from https://github.com/maridda/nerval},
   author={Mariangela D'Addato},
   year={2022},
 }
