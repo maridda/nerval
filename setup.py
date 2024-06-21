@@ -5,15 +5,15 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="nerval",
-    version="1.1.1",
+    version="1.1.2",
     author="Mariangela D'Addato",
     author_email="mdadda.py@gmail.com",
     description="Entity-level confusion matrix and classification report to evaluate Named Entity Recognition (NER) models.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/mdadda/nerval",
+    url="https://github.com/maridda/nerval",
     project_urls={
-        "Bug Tracker": "https://github.com/mdadda/nerval/issues",
+        "Bug Tracker": "https://github.com/maridda/nerval/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",

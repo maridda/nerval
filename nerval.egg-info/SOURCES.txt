@@ -1,0 +1,11 @@
+LICENCE.txt
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+nerval/__init__.py
+nerval/nerval.py
+nerval.egg-info/PKG-INFO
+nerval.egg-info/SOURCES.txt
+nerval.egg-info/dependency_links.txt
+nerval.egg-info/top_level.txt
